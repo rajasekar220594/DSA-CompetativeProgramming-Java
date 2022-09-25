@@ -1,4 +1,4 @@
-package main.array;
+package com.dsa.array;
 
 public class _2BinarySearch {
 	public static void main(String[] args) {

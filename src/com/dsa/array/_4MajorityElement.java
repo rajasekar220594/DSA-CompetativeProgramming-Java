@@ -1,6 +1,10 @@
-package main.array;
+package com.dsa.array;
 
-/** Given an sorted array A of size n, find an element that occurs more than n/2 times*/
+/** 
+ *  Find the majority element in the array. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
+ *  Given an sorted array A of size n, find an element that occurs more than n/2 times
+ *  https://www.geeksforgeeks.org/majority-element/
+ */
 public class _4MajorityElement {
 	public static void main(String[] args) {
 		int arr[] = {1,1,2,3,4,1,1,1,5};

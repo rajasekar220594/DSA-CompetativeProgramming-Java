@@ -1,11 +1,15 @@
-package main.array;
+package com.dsa.array;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import java.util.Set;
 
-public class _6FindOddNoofTimesInanArray {
+/**
+ * Find the Number Occurring Odd Number of Times
+ * Given an array of positive integers. All numbers occur an even number of times except one number which occurs an odd number of times. Find the number in O(n) time & constant space.
+ * https://www.geeksforgeeks.org/find-the-number-occurring-odd-number-of-times/
+ */
+public class _6FindNoOccuringOddNoofTimesInanArray {
 	public static void main(String[] args) {
 		int arr[] = {3,2,1,2,3,1,1};
 		System.out.println(getOddOccurrenceUsingXOR(arr));

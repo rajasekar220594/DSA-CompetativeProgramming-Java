@@ -1,4 +1,11 @@
-package main.array;
+package com.dsa.array;
+
+/**
+ *  @author rajasekar
+ *  Maximum difference between two elements such that larger element appears after the smaller number
+ *  Given an array arr[] of integers, find out the maximum difference between any two elements such that larger element appears after the smaller number.
+ *  https://www.geeksforgeeks.org/maximum-difference-between-two-elements/
+ */
 
 public class _5MaxDiffBetweenTwoElements {
 
