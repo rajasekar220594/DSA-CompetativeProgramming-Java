@@ -1,13 +1,22 @@
 package com.dsa.array;
 
 /**
- *  @author rajasekar
- *  Maximum difference between two elements such that larger element appears after the smaller number
- *  Given an array arr[] of integers, find out the maximum difference between any two elements such that larger element appears after the smaller number.
- *  https://www.geeksforgeeks.org/maximum-difference-between-two-elements/
+	Maximum difference between two elements such that larger element appears after the smaller number
+
+	Given an array arr[] of integers, find out the maximum difference between any two elements such that larger element appears after the smaller number.
+
+	Input : arr = {2, 3, 10, 6, 4, 8, 1}
+	Output : 8
+	Explanation : The maximum difference is between 10 and 2.
+	
+	Input : arr = {7, 9, 5, 6, 3, 2}
+	Output : 2
+	Explanation : The maximum difference is between 9 and 7.
+
+	https://www.geeksforgeeks.org/maximum-difference-between-two-elements/
  */
 
-public class _5MaxDiffBetweenTwoElements {
+public class _05MaxDiffBetweenTwoElements {
 
 	public static void main(String[] args) {
 		int arr[] = {4,3,10,2,11,1,6,12};

@@ -1,8 +1,7 @@
 package com.dsa.array.util;
 
 /**
- * @author rajasekar
- * Array Utility class
+	Array Utility class
  */
 
 public class Arrays {
@@ -17,5 +16,9 @@ public class Arrays {
 		int temp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = temp;
+	}
+	
+	public static void sort(int arr[]) {
+		java.util.Arrays.sort(arr);
 	}
 }

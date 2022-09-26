@@ -1,11 +1,21 @@
 package com.dsa.array;
 
 /** 
- *  Find the majority element in the array. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
- *  Given an sorted array A of size n, find an element that occurs more than n/2 times
- *  https://www.geeksforgeeks.org/majority-element/
+ 	Given an sorted array A of size n, find an element that occurs more than n/2 times
+ 	
+	Find the majority element in the array. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
+	
+	Input : {3, 3, 4, 2, 4, 4, 2, 4, 4}
+	Output : 4
+	Explanation: The frequency of 4 is 5 which is greater than the half of the size of the array size. 
+	
+	Input : {3, 3, 4, 2, 4, 4, 2, 4}
+	Output : No Majority Element
+	Explanation: There is no element whose frequency is greater than the half of the size of the array size.
+	
+	https://www.geeksforgeeks.org/majority-element/
  */
-public class _4MajorityElement {
+public class _04MajorityElement {
 	public static void main(String[] args) {
 		int arr[] = {1,1,2,3,4,1,1,1,5};
 		System.out.println(moreVotingAlgo(arr));

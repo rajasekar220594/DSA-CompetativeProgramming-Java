@@ -1,6 +1,15 @@
 package com.dsa.array;
 
-public class _1LinearSearch {
+/**
+ *  Problem: Given an array arr[] of n elements, write a function to search a given element x in arr[]. 
+	Step 1: Start 
+	Step 2: Declare an array and search element as key.
+	Step 3: Traverse the array until the number is found.
+	Step 4: If the key element is found, return the index position of the array element
+	Step 5: If the key element is not found, return -1
+	Step 6: Stop.
+ */
+public class _01LinearSearch {
 	public static void main(String[] args) {
 		int arr[] = {7,5,9,2,10};
 		System.out.println(linearSearchUsingForLoop(arr, 2));

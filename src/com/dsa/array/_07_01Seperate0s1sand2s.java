@@ -3,12 +3,20 @@ package com.dsa.array;
 import com.dsa.array.util.Arrays;
 
 /**
- * Sort an array of 0s, 1s and 2s | Dutch National Flag problem
- * Given an array arr[] consisting of only 0s, 1s, and 2s. The task is to write a function that sorts the given array. The functions should put all 0s first, then all 1s and all 2s in last.
- * https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+	Sort an array of 0s, 1s and 2s | Dutch National Flag problem
+	
+	Given an array arr[] consisting of only 0s, 1s, and 2s. The task is to write a function that sorts the given array. The functions should put all 0s first, then all 1s and all 2s in last.
+	
+	Input: {0, 1, 2, 0, 1, 2}
+	Output: {0, 0, 1, 1, 2, 2}
+	
+	Input: {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}
+	Output: {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2}
+	
+	https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
  */
 
-public class _8Seperate0s1sand2s {
+public class _07_01Seperate0s1sand2s {
 	public static void main(String[] args) {
 		int arr[] = {0,1,2,0,1,2};
 		usingThreePointer(arr);
