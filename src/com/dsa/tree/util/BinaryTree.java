@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class BinaryTree {
 	
-	private Node root;
+	public Node root;
 	
 	public void createBinaryTree(int arr[]) {
 		root = new Node(arr[0]);
@@ -35,7 +35,7 @@ public class BinaryTree {
 	
 	public static void preOrder(Node node) {
 		if(node != null) {
-			System.out.print(node.data + " - " + node.height +" ");
+			System.out.print(node.data);
 			preOrder(node.left);
 			preOrder(node.right);
 		}

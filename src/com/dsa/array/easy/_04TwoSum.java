@@ -1,5 +1,6 @@
 package com.dsa.array.easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +55,7 @@ public class _04TwoSum {
 	}
 	
 	public static void usingSortingTechnique(int arr[], int target) {
-		ArraysUtil.sort(arr);
+		Arrays.sort(arr);
 		int l_index=0, r_index=arr.length-1,sum;
 		while(l_index<r_index) {
 			sum=arr[l_index]+arr[r_index];

@@ -30,10 +30,13 @@ public class _01SlidingWindowMax {
 	
 	public static void main(String[] args) {
 		int arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
-		slidingWindowMaxUsingLinkedListQueue(arr, 3);
+		slidingWindowMaxUsingTwoLoop(arr, 3);
 		
 		int arr1[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
-		slidingWindowMaxUsingLinkedListQueue(arr1, 4);
+		slidingWindowMaxUsingTwoLoop(arr1, 4);
+		
+		int arr2[] = {10, 4, 5, 11, 3, 15, 12, 8, 7, 9, 21, 14};
+		slidingWindowMaxUsingLinkedListQueue(arr2, 3);
 	}
 	
 	public static void slidingWindowMaxUsingTwoLoop(int arr[], int k) {
@@ -50,26 +53,27 @@ public class _01SlidingWindowMax {
 	}
 	
 	public static void slidingWindowMaxUsingLinkedListQueue(int arr[], int k) {
+		// Input: 10 4 5 11 3 15
 		Deque<Integer> Qi = new LinkedList<>();
 		int i=0;
-		for(; i<k; i++) {
+		for(; i<k; i++) { 
 			while(!Qi.isEmpty() && arr[i] >= arr[Qi.peekLast()]) {
-				Qi.removeLast();
+				Qi.removeLast(); // 1
 			}
-			Qi.addLast(i);
+			Qi.addLast(i); // 0 1 -> 0 2
 		}
 		
 		for(; i<arr.length; i++) {
 
-			System.out.print(arr[Qi.peek()] + " ");
+			System.out.print(arr[Qi.peek()] + " "); // 10 11 11 15
 			
 			while ((!Qi.isEmpty()) && Qi.peek() <= i - k)
-                Qi.removeFirst();
+                Qi.removeFirst(); // 0
 			
 			while(!Qi.isEmpty() && arr[i] >= arr[Qi.peekLast()]) {
-				Qi.removeLast();
+				Qi.removeLast(); // 2 -> 4 3
 			}
-			Qi.addLast(i);
+			Qi.addLast(i); // 3 4 -> 5
 			
 		}
 		

@@ -5,10 +5,10 @@ public class SinglyLinkedList {
 	public Node head;
 	
 	public static class Node {
-		int data;
-		Node next;
+		public int data;
+		public Node next;
 		
-		Node(int data) {
+		public Node(int data) {
 			this.data = data;
 			this.next = null;
 		}
@@ -24,6 +24,17 @@ public class SinglyLinkedList {
 		head = firstNode;
 	}
 	
+	public void insertLast(Node node) {
+		if(head == null) {
+			head = node;
+			return;
+		}
+		Node current = head;
+		while(current.next != null) {
+			current = current.next;
+		}
+		current.next = node;
+	}
 	public void insertLast(int value) {
 		Node lastNode = new Node(value);
 		if(head == null) {

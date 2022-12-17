@@ -1,5 +1,7 @@
 package com.dsa.array.easy;
 
+import java.util.Arrays;
+
 import com.dsa.array.util.ArraysUtil;
 
 /**
@@ -12,11 +14,11 @@ public class _15TwoElementSumIsClosestToZero {
 
 	public static void main(String[] args) {
 		int arr[] = {0, 59, -9, 69, -79, 84 ,85};
-		ArraysUtil.sort(arr);
 		closestToZero(arr);
 	}
 	
 	public static void closestToZero(int arr[]) {
+		Arrays.sort(arr);
 		int l_index = 0, r_index = arr.length-1;
 		int closest=arr[l_index]+arr[r_index], a = arr[l_index], b = arr[r_index], current;
 		
@@ -36,9 +38,7 @@ public class _15TwoElementSumIsClosestToZero {
 			} else {
 				l_index++;
 			}
-			
 		}
-		
 		System.out.println(a+" "+b);
 	}
 }

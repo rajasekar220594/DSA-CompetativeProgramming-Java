@@ -20,7 +20,7 @@ import com.dsa.array.util.ArraysUtil;
 public class _05Triplet {
 	public static void main(String[] args) {
 		int arr[] = {0,3,44,5,9,7};
-		usingSortingTechnique(arr, 25);
+		usingSortingTechnique2(arr, 63);
 	}
 	
 	public static void usingSortingTechnique(int arr[], int target) {
@@ -37,6 +37,27 @@ public class _05Triplet {
 					r_index--;
 				} else {
 					l_index++;
+				}
+			}
+		}
+	}
+	public static void usingSortingTechnique2(int arr[], int target) {
+		ArraysUtil.sort(arr);
+		
+		int result;
+		for(int i=0; i<arr.length-2; i++) {
+			result = target - (arr[i]+arr[i+1]);
+			//Binary Search
+			int startIndex = i+2, endIndex = arr.length-1, midIndex;
+			while(startIndex <= endIndex) {
+				midIndex = (startIndex + endIndex)/2;
+				if(arr[midIndex] == result) {
+					System.out.println(arr[i]+" "+arr[i+1]+" "+arr[midIndex]);
+					break;
+				} else if(arr[midIndex] < result) {
+					startIndex = midIndex+1;
+				} else {
+					endIndex = midIndex-1;
 				}
 			}
 		}

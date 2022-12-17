@@ -23,12 +23,13 @@ public class _17BeginningIndexOf1WithUnknownSize {
 		return -1;
 	}
 	public static int findFirstIndexOf1UsingAddIncrApproach(int arr[], int increment) {
-		int i=0;
-		for(;i<arr.length; i=i+increment) {
-			if(arr[i]==1) break;
+		int index=0;
+		for(;index<arr.length; index=index+increment) {
+			if(arr[index]==1) break;
 		}
-		for(i=i-increment; i<=i; i++) {
-			if(arr[i] == 1) return i;
+		int left_index = index - increment, right_index = index;
+		for(; left_index<=right_index; left_index++) {
+			if(arr[left_index] == 1) return left_index;
 		}
 		return -1;
 	}

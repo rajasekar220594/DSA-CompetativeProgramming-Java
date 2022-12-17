@@ -25,7 +25,57 @@ public class MinHeap {
 	public void resize() {
 		heap = Arrays.copyOf(heap, heap.length*2);
 	}
+	
+    // Returning the position of  the parent for the node currently at pos
+    public int parent(int pos) { return pos / 2; }
+ 
+    // Returning the position of the left child for the node currently at pos
+    public int leftChild(int pos) { return (2 * pos); }
+    
+    // Returning the position of the right child for the node currently at pos
+    public int rightChild(int pos)
+    {
+        return (2 * pos) + 1;
+    }
 
+    // Returning true if the passed node is a leaf node
+    public boolean isLeaf(int pos)
+    {
+        if (pos > (size / 2)) {
+            return true;
+        }
+        return false;
+    }
+ 
+    // To swap two nodes of the heap
+    public void swap(int fpos, int spos)
+    {
+        int tmp;
+        tmp = heap[fpos];
+        heap[fpos] = heap[spos];
+        heap[spos] = tmp;
+    }
+
+    // To heapify the node at pos
+    public void minHeapify(int pos)
+   {     
+	   if(!isLeaf(pos)){
+		   int swapPos= pos;
+		   // swap with the minimum of the two children
+		   // to check if right child exists. Otherwise default value will be '0'
+		   // and that will be swapped with parent node.
+		   if(rightChild(pos)<=size)
+			   swapPos = heap[leftChild(pos)]<heap[rightChild(pos)]?leftChild(pos):rightChild(pos);
+		   else
+			   swapPos= heap[leftChild(pos)];
+
+		   if(heap[pos]>heap[leftChild(pos)] || heap[pos]> heap[rightChild(pos)]){
+			   swap(pos,swapPos);
+			   minHeapify(swapPos);
+		   }
+
+	   }      
+   }
 	public void insert(int x) {
 		if(size == heap.length-1) {
 			resize();
@@ -93,9 +143,32 @@ public class MinHeap {
 		}
 	}
 
+	public void getMax() {
+		int n = (size+1)/2;
+		int max = heap[n];
+		for (int i=n+1; i<=size; i++) {
+			if(heap[i] > max) {
+				max = heap[i];
+			}
+		}
+		System.out.println("Max >> "+max);
+	}
+	
+	public void deleteElement(int value) {
+		int i=1;
+		for(; i<=size; i++) {
+			if(heap[i] == value) break;
+		}
+		
+		if(i<size) {
+			heap[i] = heap[size];
+			size--;
+			minHeapify(i);
+		}
+	}
 	public static void main(String[] args) {
 		MinHeap minHeap = new MinHeap(10);		
-
+		minHeap.insert(60);
 		minHeap.insert(10);
 		minHeap.insert(20);
 		minHeap.insert(30);
@@ -103,8 +176,12 @@ public class MinHeap {
 		minHeap.insert(5);
 		minHeap.insert(40);
 		minHeap.insert(35);
+		minHeap.insert(50);
+		minHeap.getMax();
+		
 		minHeap.printMinHeap(); // 5 10 30 25 20 40 35
-
+		minHeap.deleteElement(10);
+		
 		minHeap.delete();
 		minHeap.printMinHeap(); // 10 20 30 25 35 40
 		minHeap.delete();

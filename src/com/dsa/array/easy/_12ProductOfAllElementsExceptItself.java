@@ -59,14 +59,15 @@ public class _12ProductOfAllElementsExceptItself {
 	public static int[] findProduct(int arr[]) { 
 		int n = arr.length;
 		int i, temp = 1; 
-
+		// Initializing temp to 1 because from left side no element so it's start from one
+		// Initializing temp to 1 for product on left side
 		// Allocation of result array
 		int result[] = new int[n]; 
 
 		// Product of elements on left side excluding arr[i]
 		for (i = 0; i < n; i++) { 
 			result[i] = temp; 
-			temp *= arr[i]; 
+			temp = temp * arr[i]; 
 		} 
 
 		// Initializing temp to 1 for product on right side
@@ -74,8 +75,8 @@ public class _12ProductOfAllElementsExceptItself {
 
 		// Product of elements on right side excluding arr[i] 
 		for (i = n - 1; i >= 0; i--) { 
-			result[i] *= temp; 
-			temp *= arr[i]; 
+			result[i] = result[i] * temp; 
+			temp = temp * arr[i]; 
 		}
 
 		return result; 

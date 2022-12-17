@@ -216,7 +216,13 @@ public class AVLTree {
 	    }
 	    	 
 	    public static void main(String[] args) {
-	        
+	        AVLTree avlTree = new AVLTree();
+	        int arr[] = {10, 0, 4, 5, 7, 1, 3, 2};
+	        for(int i=arr.length-1; i>=0; i--) {
+	        	avlTree.root = avlTree.insert(avlTree.root, arr[i]);
+	        }
+	        BinaryTree.preOrder(avlTree.root);
+	        System.out.println("Test");
 	    	// Creation
 	    	AVLTree tree = new AVLTree();
 	 

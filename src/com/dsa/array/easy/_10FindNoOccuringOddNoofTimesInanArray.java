@@ -27,17 +27,16 @@ public class _10FindNoOccuringOddNoofTimesInanArray {
 		Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
 		for(int i=0; i<arr.length; i++) {
 			if(hash.containsKey(arr[i])) {
-				hash.remove(arr[i]);
+				hash.put(arr[i], hash.get(arr[i])+1);
 			} else {
-				hash.put(arr[i], null);
+				hash.put(arr[i], 1);
 			}
 		}
-		Set<Integer> s = hash.keySet();
-		System.out.println(s);
-		for(Integer d : s) {
-			System.out.println(d);
+		for(Map.Entry<Integer, Integer> entry : hash.entrySet()) {
+			if(entry.getValue()%2 != 0) {
+				System.out.println(entry.getKey());
+			}
 		}
-		System.out.println(hash);
 		return -1;
 	}
 	
