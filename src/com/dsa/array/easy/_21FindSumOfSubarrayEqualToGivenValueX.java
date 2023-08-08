@@ -6,7 +6,7 @@ public class _21FindSumOfSubarrayEqualToGivenValueX {
 
 	public static void main(String[] args) {
 		int arr[] = {5,4,6,7,9,8,3,1,2,60};
-		subArraySumUsingTwoPointers(arr, 62);
+		subArraySumUsingTwoPointers(arr, 60);
 	}
 	
 	public static void subArraySumUsingTwoLoop(int arr[], int sum) {

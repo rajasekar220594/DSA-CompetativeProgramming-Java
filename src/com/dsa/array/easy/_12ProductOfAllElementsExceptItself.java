@@ -6,7 +6,7 @@ public class _12ProductOfAllElementsExceptItself {
 
 	public static void main(String[] args) {
 		int[] arr = {2,3,4,5};
-		ArraysUtil.display(findProduct(arr));
+		ArraysUtil.display(findProduct(arr)); // 60 40 30 24
 
 	}
 	public static int[] findProductUsingBruteForceApproach(int arr[]) {    
@@ -56,7 +56,7 @@ public class _12ProductOfAllElementsExceptItself {
 		return arr;
 	}
 
-	public static int[] findProduct(int arr[]) { 
+	public static int[] findProduct(int arr[]) { // 2,3,4,5
 		int n = arr.length;
 		int i, temp = 1; 
 		// Initializing temp to 1 because from left side no element so it's start from one
@@ -66,19 +66,20 @@ public class _12ProductOfAllElementsExceptItself {
 
 		// Product of elements on left side excluding arr[i]
 		for (i = 0; i < n; i++) { 
-			result[i] = temp; 
+			result[i] = temp; // 1 2 6 24
 			temp = temp * arr[i]; 
 		} 
-
+		// result[i] // 1 2 6 24
+		// arr[i]   //  2 3 4 5
 		// Initializing temp to 1 for product on right side
 		temp = 1; 
 
 		// Product of elements on right side excluding arr[i] 
 		for (i = n - 1; i >= 0; i--) { 
-			result[i] = result[i] * temp; 
-			temp = temp * arr[i]; 
+			result[i] = result[i] * temp; // 24 = 24*1,  30 = 6 * 5,
+			temp = temp * arr[i];  // 5 = 1*5, 20 = 5*4, 
 		}
 
-		return result; 
+		return result;  // 60 40 30 24
 	} 
 }

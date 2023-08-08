@@ -15,8 +15,26 @@ public class _15TwoElementSumIsClosestToZero {
 	public static void main(String[] args) {
 		int arr[] = {0, 59, -9, 69, -79, 84 ,85};
 		closestToZero(arr);
+		closestToZeroSingleNo();
 	}
 	
+	public static void closestToZeroSingleNo() {
+		int[] arr = {1,4,5,6,7,-1};
+
+		int closestIndex = 0;
+		int diff = Integer.MAX_VALUE;
+		for (int i = 0; i < arr.length; i++) {
+		    int abs = Math.abs(arr[i]);
+		    if (abs < diff) {
+		        closestIndex = i;
+		        diff = abs;
+		    } else if (abs == diff && arr[i] > 0 && arr[closestIndex] < 0) {
+		        //same distance to zero but positive 
+		        closestIndex =i;
+		    }
+		}   
+		System.out.println(arr[closestIndex ]);
+	}
 	public static void closestToZero(int arr[]) {
 		Arrays.sort(arr);
 		int l_index = 0, r_index = arr.length-1;
