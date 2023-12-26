@@ -1,11 +1,16 @@
 package com.dsa.string.easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class _01UniqueEmailAddress {
 
 	public static void main(String[] args) {
+		String str = "Test";
+		
+		String arr[] = str.split("");
+		
 		String[] emails = {"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"};
 		System.out.println(numUniqueEmails(emails));
 	}

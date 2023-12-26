@@ -6,7 +6,7 @@ import java.util.Queue;
 import com.dsa.tree.util.BinaryTree;
 import com.dsa.tree.util.Node;
 
-public class _04ConvertBTToMirrorTree {
+public class _05ConvertBTToMirrorTree {
 
 	public static void main(String[] args) {
 		int arr[]   = {1, 2, 3, 4, 5, 6, 7};

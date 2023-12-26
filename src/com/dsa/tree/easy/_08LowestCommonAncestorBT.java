@@ -6,7 +6,7 @@ import com.dsa.array.util.ArraysUtil;
 import com.dsa.tree.util.BinaryTree;
 import com.dsa.tree.util.Node;
 
-public class _05LowestCommonAncestorBT {
+public class _08LowestCommonAncestorBT {
 
 	public static void main(String[] args) {
 		int arr[]   = {1,2,3,4,5,7,8,9,10,11,12,-1,-1,13,14};

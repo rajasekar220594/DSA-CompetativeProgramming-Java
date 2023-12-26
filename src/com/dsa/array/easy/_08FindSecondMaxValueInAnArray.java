@@ -2,7 +2,7 @@ package com.dsa.array.easy;
 
 public class _08FindSecondMaxValueInAnArray {
 	public static void main(String[] args) {
-		int[] arr = {9,2,3,6};
+		int[] arr = {9, 8, 2, 3, 6, 12, 11, 10};
 		System.out.println(findSecondMaximum(arr));
 	}
 	public static int findSecondMaximum(int[] arr) {

@@ -1,13 +1,20 @@
 package com.dsa.array.easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class _09FindFirstNotRepeatingIntegerInAnArray {
 
 	public static void main(String[] args) {
 		int[] arr = {9, 2, 3, 2, 6, 6};
 		System.out.println(findFirstUnique(arr));
+		System.out.println(findFirstUniqueJava8(arr));
 	}
 	
 	public static int findFirstUnique(int[] arr) {
@@ -26,5 +33,11 @@ public class _09FindFirstNotRepeatingIntegerInAnArray {
 			}
 		}
 		return result;
+	}
+	
+	public static int findFirstUniqueJava8(int[] arr) {
+		Map<Integer, Long> map = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+		Optional<Integer> result = map.entrySet().stream().filter(i->i.getValue()==1L).map(i->i.getKey()).findFirst();
+		return result.get();
 	}
 }

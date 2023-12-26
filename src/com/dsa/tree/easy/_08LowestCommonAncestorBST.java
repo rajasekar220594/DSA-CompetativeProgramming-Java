@@ -3,7 +3,7 @@ package com.dsa.tree.easy;
 import com.dsa.tree.util.BinaryTree;
 import com.dsa.tree.util.Node;
 
-public class _05LowestCommonAncestorBST {
+public class _08LowestCommonAncestorBST {
 
 	public static void main(String[] args) {
 		int arr[]   = {20,7,21,3,11,-1,-1, -1,-1,9,13};

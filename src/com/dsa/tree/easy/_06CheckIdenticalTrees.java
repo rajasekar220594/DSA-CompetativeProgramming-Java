@@ -3,7 +3,7 @@ package com.dsa.tree.easy;
 import com.dsa.tree.util.BinaryTree;
 import com.dsa.tree.util.Node;
 
-public class _02CheckIdenticalTrees {
+public class _06CheckIdenticalTrees {
 
 	public static void main(String[] args) {
 		BinaryTree binaryTree1 = new BinaryTree();

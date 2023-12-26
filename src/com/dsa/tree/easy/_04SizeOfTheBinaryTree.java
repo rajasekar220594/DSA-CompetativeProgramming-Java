@@ -7,7 +7,7 @@ import java.util.Stack;
 import com.dsa.tree.util.BinaryTree;
 import com.dsa.tree.util.Node;
 
-public class _01SizeOfTheBinaryTree {
+public class _04SizeOfTheBinaryTree {
 
 	static int size = 0;
 	public static void main(String[] args) {
